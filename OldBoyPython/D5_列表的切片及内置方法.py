@@ -49,3 +49,7 @@ print(list_c)
 # sort（排序）
 list_c.sort()
 print(list_c)
+
+# 判断类型
+list_d = [2, 5, 1, 4, 6, 3, 0, 9, 8, 1, 7]
+print(type(list_d) is list)
