@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # --------------------------------
 # ProjectName: MySpace
-# Author: jiangheng
+# Author: crisimple
 # CreateTime: 2018/12/28 20:15
 # FileName: D5_02数值布尔值字符串简介.py
 # Description: 计算机中一切皆对象；世界万物中，皆为对象，一切对象皆可对象

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # --------------------------------
 # ProjectName: MySpace
-# Author: jiangheng
+# Author: crisimple
 # CreateTime: 2018/12/28 20:50
 # FileName: D5_03for循环中使用break或continue.py
 # Description: continue结束本次循环，继续下一次循环

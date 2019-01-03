@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # --------------------------------
 # ProjectName: MySpace
-# Author: jiangheng
+# Author: crisimple
 # CreateTime: 2018/12/28 10:17
 # FileName: D5_01字符串格式化输出.py
 # Description: 格式话输出用户信息
