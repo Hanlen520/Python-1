@@ -9,8 +9,15 @@
 # Question:
 # --------------------------------
 
+# 列表的创建
+# 传统方式创建列表
 list_a = ["A", "B", "C", "D", "E"]
 print("原始的列表list_a: ", list_a)
+# 工厂函数方式创建列表
+list_b = list((1, 2, 3))
+print(list_b)
+list_c = list([5, 6, 7])
+print(list_c)
 
 # 列表的增删改查
 # 增
