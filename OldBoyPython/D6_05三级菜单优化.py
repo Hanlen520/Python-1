@@ -1,16 +1,13 @@
 #!/bin/usr/env python3
 # -*- coding: utf-8 -*-
-# --------------------------------------
+# --------------------------------
 # ProjectName: MySpace
 # Author: crisimple
-# CreateTime: 2019/1/8 0:39
-# FileName: D6_04灵活的三级菜单.py
-# Description:
-#       1. 用户可以一层一层滴进入菜单；
-#       2. 用户可以在每一层返回到上一层；
-#       3. 用户可以在任意菜单中退出菜单选择
-# Question:
-# --------------------------------------
+# CreateTime: 2019/1/8 20:21
+# FileName: D6_05三级菜单优化.py
+# Description: 
+# Question: 
+# --------------------------------
 menu = {
     '北京': {
         '朝阳': {
@@ -102,34 +99,34 @@ menu = {
     }
 }
 
+current_layer = menu
+parent_layers = []
+
 while True:
-    # 遍历最顶层的省级
-    for key in menu:
-        print("1_省级菜单：", key)
+    # 遍历字典打印第一层的菜单
+    for key in current_layer:
+        print("菜单：", key)
+    choice = input("请输入：").strip()
+    # 如果输入长度为0，则继续输入
+    if len(choice) == 0:
+        continue
+    if choice in current_layer:
+        # 进入子项之前，记录父层是那一层
+        parent_layers.append(current_layer)
+        # 根据选择进入菜单的子项
+        current_layer = current_layer[choice]
+    elif choice == 'b':
+        # 返回父层
+        if parent_layers:
+            current_layer = parent_layers.pop()
+    elif choice == 'q':
+        print("感谢您的使用")
+        break
+    else:
+        print("查无此项，请检查您的输入。")
 
-    # 根据打印情况，让用户选择
-    choice = input("1_请选择>>：").strip()
-    if choice in menu:
-        while True:
-            for key2 in menu[choice]:
-                print("2_市级菜单：", key2)
 
-            # 继续让用户进行选择
-            choice2 = input("2_请选择市>>：").strip()
-            if choice2 in menu[choice]:
-                while True:
-                    for key3 in menu[choice][choice2]:
-                        print("3_区级菜单：", key3)
 
-                    # 继续让用户进行选择
-                    choice3 = input("3_请选择区>>：").strip()
-                    if choice3 in menu[choice][choice2]:
-                        while True:
-                            for key4 in menu[choice][choice2][choice3]:
-                                print("4_具体地点菜单：", key4)
-                            # 继续让用户选择具体的地点
-                            choice4 = input("4_选择地点>>：").strip()
-                            if choice4 in menu[choice][choice2][choice3][choice4]:
-                                print("您已经到达最小维度")
+
 
 
