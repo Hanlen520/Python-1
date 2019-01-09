@@ -21,5 +21,18 @@
 # -----Unicode：utf-16   一个字符占2个字节
 # -----Unicode：utf-8    一个英文用ASCII码来存，一个中文占3个字节
 
+# Python的编码规则
 # 编码encode: 将语言转换为Unicode
 # 解码decode: 将Unicode转换为某种语言
+
+# Python2：
+#
+
+
+
+
+
+
+
+
+
