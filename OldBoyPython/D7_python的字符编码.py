@@ -25,8 +25,16 @@
 # 编码encode: 将语言转换为Unicode
 # 解码decode: 将Unicode转换为某种语言
 
-# Python2：
-#
+# Python2：默认编码是ASCII码编码
+# string = "特斯拉"
+
+
+# Python3：默认编码是unicode编码
+
+
+
+
+
 
 
 
