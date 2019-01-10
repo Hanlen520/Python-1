@@ -25,8 +25,25 @@
 # 编码encode: 将语言转换为Unicode
 # 解码decode: 将Unicode转换为某种语言
 
+
 # Python2：
-#
+# Python 2.7.15 (v2.7.15:ca079a3ea3, Apr 30 2018, 16:30:26) [MSC v.1500 64 bit (AMD64)] on win32
+# Type "help", "copyright", "credits" or "license" for more information.
+# >>> string = "特斯拉"
+# >>> type(string)
+# <type 'str'>
+# >>> string
+# '\xcc\xd8\xcb\xb9\xc0\xad'
+# string.decode("gbk")
+# u'\u7279\u65af\u62c9'
+
+
+# Python3:
+# Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:57:15) [MSC v.1915 64 bit (AMD64)] on win32
+# Type "help", "copyright", "credits" or "license" for more information.
+# >>> string = "埃隆马斯克"
+# >>> string
+# '埃隆马斯克'
 
 
 
