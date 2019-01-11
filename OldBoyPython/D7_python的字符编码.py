@@ -25,9 +25,7 @@
 # 编码encode: 将语言转换为Unicode
 # 解码decode: 将Unicode转换为某种语言
 
-<<<<<<< HEAD
-
-# Python2：
+# Python2：默认编码是ASCII编码
 # Python 2.7.15 (v2.7.15:ca079a3ea3, Apr 30 2018, 16:30:26) [MSC v.1500 64 bit (AMD64)] on win32
 # Type "help", "copyright", "credits" or "license" for more information.
 # >>> string = "特斯拉"
@@ -39,25 +37,12 @@
 # u'\u7279\u65af\u62c9'
 
 
-# Python3:
+# Python3：默认编码是utf-8编码
 # Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:57:15) [MSC v.1915 64 bit (AMD64)] on win32
 # Type "help", "copyright", "credits" or "license" for more information.
 # >>> string = "埃隆马斯克"
 # >>> string
 # '埃隆马斯克'
-=======
-# Python2：默认编码是ASCII码编码
-# string = "特斯拉"
-
-
-# Python3：默认编码是unicode编码
-
-
-
-
-
->>>>>>> fbf128dd0c9d03c187b9b7b20e360351517b60b6
-
 
 
 
