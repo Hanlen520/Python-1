@@ -74,8 +74,12 @@ fra = open("./OperatorFile/小诗小吟.txt", 'r', encoding="utf-8")
 #     fra.readlines()[3] = ''.join([fra.readlines()[3], '---来自降维视角的蔑视'])
 
 # 方法四：迭代器
-# for循环使用fra的对象的迭代器，用一行生成一行
+# for循环使用fra对象内的迭代器，用一行生成一行
+number = 0
 for i in fra:
+    number += 1
+    if number == 6:
+        i = ''.join([i.strip(), "---来自降维视角的蔑视"])
     print(i.strip())
 fra.close()
 
