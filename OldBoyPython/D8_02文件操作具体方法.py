@@ -70,3 +70,31 @@ fw_.close()
 # fa_.flush()
 # print(fa_.readlines())
 # fa_.close()
+
+
+# 所谓的终极问题，读取文件并修改某一行的内容
+fzr = open("./OperatorFile/D802所谓的终极问题.txt", 'r', encoding="utf-8")
+fzw = open("./OperatorFile/D802所谓的终极问题2.txt", 'w', encoding="utf-8")
+z_number = 0
+for line in fzr:
+    z_number += 1
+    if z_number == 1:
+        line = "Hello Myself. \n"
+        # line = ''.join([line], 'FUCK')
+    fzw.write(line)
+fzr.close()
+fzw.close()
+
+
+# with语句：解决忘记关闭文件操作的终极大招
+# 管理一个文件对象
+with open("./OperatorFile/D802_with文件对象.txt", 'r', encoding="utf-8") as f_with:
+    print(f_with.read(8))
+
+# 管理多个文件对象
+with open("./OperatorFile/D802_with文件对象.txt", 'r', encoding="utf-8") as f_1, open("./OperatorFile/D802_with文件对象2.txt", "w", encoding="utf-8") as f_2:
+    print(f_1.read(2))
+    f_2.write("Hello Python Word.")
+
+
+
