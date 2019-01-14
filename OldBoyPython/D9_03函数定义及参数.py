@@ -82,6 +82,19 @@ def info3(*args, **kwargs):
 info3("Simple", 23, "male", Job="IT", Hobby="Music", Sigle=True)
 
 
+# ==============================关键词return==================================
+# 作用：结束函数 、 返回一个对象
+# 注意点：函数如果没有return，会默认返回一个None；
+#        如果return多个对象，Python会把这多个对象封装成一个元组对象返回
+def foo():
+    print("-----A------")
+    return 1, 2, "string", [1, 2, 3], {"Name:", "Cris"}
+    print("=====B======")
+
+
+print(foo())
+
+
 
 
 
