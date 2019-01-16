@@ -18,6 +18,8 @@ def func(n):
 
 
 # 下面定义的这个函数称之为高阶函数
+#   1.函数名可以作为参数输入
+#   2.函数名可以作为返回值
 def high_fuc(a, b, func):
     return func(a) + func(b)
 
