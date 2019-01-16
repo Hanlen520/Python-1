@@ -23,11 +23,11 @@ print("e" not in set_a)
 
 
 # 3.更新集合
-# 添加元素
+# 添加元素: 以整体增加
 set_a.add("uu")
 print("set_a: ", set_a)
 
-# 更新元素
+# 更新元素: 以小结合增加到大集合中
 set_a.update("ops")
 print("set_a: ", set_a)
 
