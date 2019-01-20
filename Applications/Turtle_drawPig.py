@@ -89,6 +89,7 @@ def nose():
     t.color(160, 82, 45)
     t.end_fill()
 
+
 # 头
 def header():
     t.color((255, 155, 192), "pink")
@@ -155,6 +156,7 @@ def are():
     t.circle(-50, 56)
     t.end_fill()
 
+
 # 眼睛
 def eye():
     t.color((255,155,192),"white")
@@ -198,6 +200,7 @@ def eye():
     t.circle(3)
     t.end_fill()
 
+
 # 佩奇的腮
 def sai():
     t.color((255, 155, 192))
@@ -211,6 +214,7 @@ def sai():
     t.circle(30)
     t.end_fill()
 
+
 # 佩奇的嘴
 def mouse():
     t.color(239, 69, 19)
@@ -223,6 +227,7 @@ def mouse():
     t.seth(-80)
     t.circle(30, 40)
     t.circle(40, 80)
+
 
 # 佩奇的身体
 def body():
@@ -247,6 +252,7 @@ def body():
     t.circle(-80, 63)
     t.circle(-150, 24)
     t.end_fill()
+
 
 # 佩奇的手
 def hand():
@@ -284,6 +290,7 @@ def hand():
     t.seth(-170)
     t.circle(20, 90)
 
+
 # 佩奇的脚
 def foot():
     t.pensize(10)
@@ -315,6 +322,7 @@ def foot():
     t.pensize(15)
     t.fd(20)
 
+
 # 佩奇的尾巴
 def tail():
     t.pensize(4)
@@ -329,6 +337,7 @@ def tail():
     t.circle(70, 20)
     t.circle(10, 330)
     t.circle(70, 30)
+
 
 def main():
     nose()
