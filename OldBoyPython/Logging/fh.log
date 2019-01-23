@@ -1,0 +1,5 @@
+2019-01-23 21:21:23,364 D11_06模块logging.py [line: 91] CRITICAL critical
+2019-01-23 21:21:23,365 D11_06模块logging.py [line: 92] ERROR error
+2019-01-23 21:21:23,365 D11_06模块logging.py [line: 93] WARNING warning
+2019-01-23 21:21:23,365 D11_06模块logging.py [line: 94] DEBUG debug
+2019-01-23 21:21:23,365 D11_06模块logging.py [line: 95] INFO info

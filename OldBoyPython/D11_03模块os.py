@@ -10,6 +10,7 @@
 # Question:
 # --------------------------------
 
+# os模块就是在跟操作系统进行交互操作
 import os
 
 
@@ -110,24 +111,35 @@ print(os.path.abspath("./abc"))
 
 # 21.path.basename
 # 获取文件名
-print(os.path.basename(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+# print(os.path.basename(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
 
 # 22.path.exists
 # 判断路径是否存在
 print(os.getcwd())
-print(os.path.exists(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+# print(os.path.exists(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
 
 # 23.path.isabs
 # 如果路径是绝对路径则返回为True
-print(os.path.isabs(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+# print(os.path.isabs(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
 
 # 24.path.isfile
 # 如果是一个存在文件的路径则返回True，否则返回False
-os.chdir(r"C:\MySpace\Python\OldBoyPython\Dirs")
-print(os.path.isfile(r"C:\MySpace\Python\OldBoyPython\Dirs\stat文件.txt"))
+# os.chdir(r"C:\MySpace\Python\OldBoyPython\Dirs")
+# print(os.path.isfile(r"C:\MySpace\Python\OldBoyPython\Dirs\stat文件.txt"))
 
 # 25.path.isdir
 # 如果目录存在则返回True，否则返回False
-print(os.path.isdir(r"C:\MySpace\Python\OldBoyPython\Dirs"))
+# print(os.path.isdir(r"C:\MySpace\Python\OldBoyPython\Dirs"))
 
+# 26.path.join
+# 将多个路径组合后返回
+print(os.path.join(r"Dirs", "dirs", "dirs2"))
+
+# 27.path.getatime
+# 返回path所指向的文件或目录的最后的存取时间（返回是UnixTime）
+print(os.path.getatime(r"D:\MySpace\Python\OldBoyPython\Dirs"))
+
+# 28.path.getmtime
+# 返回path所指向的文件或目录的最后的修改时间（返回是UnixTime）
+print(os.path.getmtime(r"D:\MySpace\Python\OldBoyPython\Dirs"))
 

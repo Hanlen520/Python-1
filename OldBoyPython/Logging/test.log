@@ -1,0 +1,15 @@
+Wed,23 Jan 2019 20:59:37 D11_06模块logging.py [line: 26] CRITICAL critical
+Wed,23 Jan 2019 20:59:37 D11_06模块logging.py [line: 27] ERROR error
+Wed,23 Jan 2019 20:59:37 D11_06模块logging.py [line: 28] WARNING warning
+Wed,23 Jan 2019 20:59:37 D11_06模块logging.py [line: 30] INFO info
+Wed,23 Jan 2019 20:59:37 D11_06模块logging.py [line: 31] DEBUG debug
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 24] CRITICAL critical
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 25] ERROR error
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 26] WARNING warning
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 28] INFO info
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 29] DEBUG debug
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 91] CRITICAL critical
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 92] ERROR error
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 93] WARNING warning
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 94] DEBUG debug
+Wed,23 Jan 2019 21:21:23 D11_06模块logging.py [line: 95] INFO info
