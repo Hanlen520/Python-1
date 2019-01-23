@@ -32,7 +32,7 @@ print("pardir获取当前目录的父目录字符串名: ", os.pardir)
 
 # 5.makedirs()
 # 创建多级目录
-os.chdir(r'D:\MySpace\Python\OldBoyPython')
+# os.chdir(r'D:\MySpace\Python\OldBoyPython')
 print("当前目录的路径是：", os.getcwd())
 # os.makedirs("Dirs\\dir1\\dir2")
 # os.makedirs("Dirs\\非空文件不能删除")
@@ -53,26 +53,26 @@ print("当前目录的路径是：", os.getcwd())
 
 # 9.listdir()
 # 打印当前目录下的所有文件及文件夹
-list_dirs = os.listdir(r"D:\MySpace\Python\OldBoyPython\Dirs")
-print("list_dirs: ", list_dirs)
-print("更改目录路径：", os.chdir(r"D:\MySpace\Python\OldBoyPython\Dirs"))
-print("当前目录路径：", os.getcwd())
-print("list_dirs: ", list_dirs)
+# list_dirs = os.listdir(r"D:\MySpace\Python\OldBoyPython\Dirs")
+# print("list_dirs: ", list_dirs)
+# print("更改目录路径：", os.chdir(r"D:\MySpace\Python\OldBoyPython\Dirs"))
+# print("当前目录路径：", os.getcwd())
+# print("list_dirs: ", list_dirs)
 
 # 10.remove()
 # 只能删除文件，不能删除文件夹
 # os.remove(r"remove可以删除文件.txt")
-print("list_dirs: ", list_dirs)
+# print("list_dirs: ", list_dirs)
 
 # 11.rename()
 # os.rename('改名字', '改名字后的文件夹')
-print("list_dirs: ", list_dirs)
+# print("list_dirs: ", list_dirs)
 
 # 12.stat()
 # 获取文件操作系统层次的信息
-file_info = os.stat(r"D:\MySpace\Python\OldBoyPython\Dirs\stat文件.txt")
-print(file_info)
-print("文件大小st_size:", file_info.st_size)
+# file_info = os.stat(r"D:\MySpace\Python\OldBoyPython\Dirs\stat文件.txt")
+# print(file_info)
+# print("文件大小st_size:", file_info.st_size)
 
 
 # 13.sep
@@ -102,8 +102,32 @@ print(os.path.abspath("./abc"))
 
 # 19.path.split
 # 区分路径和文件
-print(os.path.split(r"D:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+# print(os.path.split(r"D:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
 
 # 20.path.dirname
 # 获取路径
-print(os.path.dirname(r"D:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+# print(os.path.dirname(r"D:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+
+# 21.path.basename
+# 获取文件名
+print(os.path.basename(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+
+# 22.path.exists
+# 判断路径是否存在
+print(os.getcwd())
+print(os.path.exists(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+
+# 23.path.isabs
+# 如果路径是绝对路径则返回为True
+print(os.path.isabs(r"C:\MySpace\Python\OldBoyPython\Dirs\abc.txt"))
+
+# 24.path.isfile
+# 如果是一个存在文件的路径则返回True，否则返回False
+os.chdir(r"C:\MySpace\Python\OldBoyPython\Dirs")
+print(os.path.isfile(r"C:\MySpace\Python\OldBoyPython\Dirs\stat文件.txt"))
+
+# 25.path.isdir
+# 如果目录存在则返回True，否则返回False
+print(os.path.isdir(r"C:\MySpace\Python\OldBoyPython\Dirs"))
+
+
