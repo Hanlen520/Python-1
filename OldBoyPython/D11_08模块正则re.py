@@ -47,10 +47,27 @@ print(res3)
 # \W 匹配任何非字母数字字符，它相当于类[^a-zA-Z0-9]
 # \b 匹配与特殊字符的边界
 
-# |
-
 
 # 3. re.search()返回一个匹配的对象
+
+# 4. ()分组
+res4 = re.findall('(as)+', "fdassaasdfg")
+print("res4: ", res4)
+
+
+# 二、正则表达式的方法：
+# 1. findall()      所有结果都返回到一个列表里
+# 2. search()       返回一个对象(object)，对象可以调用group方法返回结果
+# 3. match()        只在字符串开始匹配, 返回第一个匹配到的对象
+# 4. split([k, s])  分别通过[k, s]进行字符串分割
+# 5. sub('t..n', 'b......b', 'string') 位置二将位置与位置三匹配的地方进行替换
+# 6. compile()      规则重复使用是就要用这种方法进行规则的编译, 然后用返回的对象进行1-5方法的调用
+obj = re.compile("\.com")
+obj.findall()
+obj.search()
+obj.match()
+obj.split()
+obj.sub()
 
 
 
