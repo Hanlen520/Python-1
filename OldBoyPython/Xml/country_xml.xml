@@ -1,0 +1,17 @@
+<data>
+    <country name="China">
+        <rank updated="yes">1</rank>
+        <year updated="YES">2027</year>
+        <gpdpc>201800000</gpdpc>
+    </country>
+    <country name="American">
+        <rank updated="yes">2</rank>
+        <year updated="YES">2027</year>
+        <gpdpc>201000000</gpdpc>
+    </country>
+    <country name="Russia">
+        <rank updated="yes">3</rank>
+        <year updated="YES">2027</year>
+        <gpdpc>200800000</gpdpc>
+    </country>
+</data>
