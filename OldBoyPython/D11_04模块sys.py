@@ -36,6 +36,7 @@ def download():
 # 2. sys.exit([arg])
 # 程序中间的退出，arg=0为正常退出
 
+
 # 3. sys.version
 # 查看当前python解释器的版本
 print(sys.version)

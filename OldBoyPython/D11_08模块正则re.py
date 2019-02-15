@@ -12,10 +12,6 @@
 # Question:
 # --------------------------------------
 
-<<<<<<< HEAD
-
-
-=======
 import re
 
 string1 = "Hello World"
@@ -72,7 +68,7 @@ obj.search()
 obj.match()
 obj.split()
 obj.sub()
->>>>>>> 98747c637d2c254935870626558111125a654386
+
 
 
 
