@@ -4,7 +4,7 @@
 # ProjectName: MySpace
 # Author: crisimple
 # CreateTime: 2019/2/17 21:50
-# FileName: D12_06面向对象类的知识.py
+# FileName: D12_06面向对象类_属性&方法.py
 # Description:
 #    应用场景：
 #         如果对象中需要保存一些值，执行某些功能的时候，需要使用对象中的值 =====》 普通方法
@@ -52,10 +52,13 @@ class Test:
     def per(self, val):
         print(val)
 
-    #
+    # del
     @per.deleter
     def per(self):
         return "是否真正删除了"
+
+    # property的另一种写法
+    # other = property(fget=per, fdel=per, fset=per, doc="这是注释")
 
 
 t1 = Test()
