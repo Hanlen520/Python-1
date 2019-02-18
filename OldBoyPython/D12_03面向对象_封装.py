@@ -32,18 +32,3 @@ p2 = Person()
 print(p2)
 print(p2.eat('orange'))
 
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> cefe2f03869cb7ea2342aaead84c646c790dca1d
-
-
