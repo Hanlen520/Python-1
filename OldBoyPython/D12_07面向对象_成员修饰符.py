@@ -11,6 +11,7 @@
 # Question:
 # --------------------------------------
 
+
 class Person:
 
     __father = '大明'
@@ -37,11 +38,17 @@ class Person:
 
     # 私有方法，外部無法直接访问，可以通过内部的
     def __play(self):
-        print("play")
+        print("play1.........")
 
     def play2(self):
         p = self.__play()
         return p
+
+
+# 子类继承父类
+class Son(Person):
+    def __init__(self):
+        self.name = 'son......1213'
 
 
 # 类的外部
@@ -57,6 +64,15 @@ print(Person.show_father())
 # 所以说只要是内部即可，和普通方法或是静态方法没有必然的关系
 print(Person.show_sex())
 
+# 私有的方法通过内部的普通方法间接滴在外部访问
+p1.play2()
+
+
+# 子类继承父类
+s1 = Son()
+print(s1.name)
+# print(s1.__age)   # 虽然是继承但是子类无法直接访问父类的私有字段
+# print(s1.show_age())
 
 
 
