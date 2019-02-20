@@ -37,8 +37,8 @@ def foo2():
 
 # 自定义异常
 class MyException(Exception):
-    def __int__(self, message):
-        self.message = message
+    def __int__(self, msg):
+        self.message = msg
 
     def __str__(self):
         return self.message
