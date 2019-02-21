@@ -8,6 +8,8 @@
 # Description: 
 # Question: 
 # --------------------------------
+
+
 class Foo:
     static_value = "静态字段"
 
@@ -17,6 +19,7 @@ class Foo:
 
     def show_info(self):
         return "%s - %s" % (self.name, self.age)
+
 
 # f1叫对象，f1也叫做Foo类的实例（实例化的过程）
 f1 = Foo("Tester1", 23)
