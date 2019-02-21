@@ -18,12 +18,10 @@ sk = socket.socket()
 address = ('127.0.0.1', 8000)
 sk.connect(address)
 
+# ================ 1===============
 # 客户端接受信息
-client_revData = sk.recv(1024)
-print(str(client_revData, 'utf-8'))
-
-# 关闭客户端与服务端的通信
-sk.close()
+# client_revData = sk.recv(1024)
+# print(str(client_revData, 'utf-8'))
 
 
 
@@ -31,8 +29,19 @@ sk.close()
 
 # =============================== 2 =================
 # 客户端发送信息
-# inp = input("client input>>>")
-# sk.send(bytes(inp, 'utf-8'))
+while True:
+    inp = input("CLIENT INPUT>>>")
+    if inp == 'exit':
+        break
+    sk.send(bytes(inp, 'utf-8'))
+    client_revData = sk.recv(1024)
+    print(str(client_revData, 'utf-8'))
+
+
+
+# 关闭客户端与服务端的通信
+sk.close()
+
 
 
 

@@ -9,4 +9,9 @@
 # Question:
 # --------------------------------------
 
-
+#       Server          Client1
+#      bind()
+#      listen()
+#      accept()
+#      send()
+#      close()
