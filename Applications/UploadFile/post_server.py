@@ -10,14 +10,13 @@
 # --------------------------------------
 
 import socket
-import subprocess
+import os
 
 
 # family: AF_INET---服务器之间的通信、
 #         AF_UNIX---UNIX不同进程之间的通信
 #
-# type:
-#       SOCK_STREAM --- TCP
+# type: SOCK_STREAM --- TCP
 #       SOCK_Dgram---UDP
 
 
@@ -28,20 +27,16 @@ sk = socket.socket()
 # <socket.socket fd=564, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0>
 
 # 2.绑定服务器的通信IP地址
-address = ('127.0.0.1', 8888)
+address = ('127.0.0.1', 8000)
 sk.bind(address)
 
 # 3.创建监听的最大连接数
 sk.listen(3)
 print("waiting.....等待连接")
 
-
 # 4.accept阻塞，等待别人连接它
 # 一旦客户端有连接则返回下面的返回值
-# (<socket.socket fd=472, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8000), raddr=('127.0.0.1', 63898)>, ('127.0.0.1', 63898))
-# conn = sk.accept()
-# print(conn)
-# conn, addr = sk.accept()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # ============================ 2 =========================
@@ -50,25 +45,19 @@ while 1:
     conn, addr = sk.accept()
     print(addr)
     while 1:
-        try:
-            server_revData = conn.recv(1024)
-        except Exception as e:
-            print(e)
-            break
+        server_recvData = conn.recv(1024)
+        cmd, file_name, file_size = str(server_recvData, 'utf-8').split("|")
+        path = os.path.join(BASE_DIR, 'cloud_file', file_name)
+        file_size = int(file_size)
 
-        if not server_revData:
-            break
-        print('......', str(server_revData, 'utf-8'))
-        # 一个client断开连接后，服务端不会退出
-        # 如果有一个新的client开启后，会和服务端建立连接
-
-        # 执行shell命令
-        sub = subprocess.Popen(str(server_revData, 'utf-8'), shell=True, stdout=subprocess.PIPE)
-        cmd_result = sub.stdout.read()
-        cmd_result_len = bytes(str(len(cmd_result)), 'utf-8')
-
-        conn.sendall(cmd_result_len)
-        conn.sendall(cmd_result)
+        has_receive = 0
+        f = open(path, 'ab')
+        while has_receive != file_size:
+            data = conn.recv(1024)
+            f.write(data)
+            has_receive += len(data)
+        print("...文件上传到云端了...")
+        f.close()
 
 # 关闭conn对象的通信
 conn.close()

@@ -24,25 +24,22 @@ sk.connect(address)
 # print(str(client_revData, 'utf-8'))
 
 
-
-
-
-# =============================== 2 =================
+# =============================== 2 =========================
 # 客户端发送信息
 while True:
     inp = input("【CLIENT INPUT】：")
     if inp == 'exit':
         break
     sk.send(bytes(inp, 'utf-8'))
-    client_revData = sk.recv(1024)
+    client_revData = int(str(sk.recv(1024), 'utf-8'))
+    print(client_revData)
 
     # 为解决传入ipconfig后报错的优化
-
-    while not client_revData:
-        client_revData += sk.recv(1024)
-
-    print(str(client_revData, 'gbk'))
-
+    data = bytes()
+    while len(data) != client_revData:
+        recv = sk.recv(1024)
+        data += recv
+    print(str(data, 'gbk'))
 
 
 # 关闭客户端与服务端的通信
