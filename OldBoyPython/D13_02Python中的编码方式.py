@@ -5,7 +5,8 @@
 # Author: crisimple
 # CreateTime: 2019/2/21 22:20
 # FileName: D13_02Python中的编码方式.py
-# Description: 
+# Description:
+#
 # Question:
 # --------------------------------------
 
@@ -31,5 +32,23 @@ s22 = b1.decode('utf-8')
 print('s22: ', s22)
 s222 = b111.decode('gbk')
 print('s222: ', s222)
+
+
+
+# Unicode
+string1 = "HEllo小明"
+print(type(string1))
+print(len(string1))
+
+string2 = U"HEllo小红"
+print(type(string2))
+print(len(string2))
+
+
+# python2的特点
+#   1. 强制类型转换
+
+
+
 
 
