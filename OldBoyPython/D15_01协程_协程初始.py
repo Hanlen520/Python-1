@@ -32,6 +32,7 @@ def customer(name):
 def producer():
     pass
 
+
 if __name__ == "__main__":
     cu1 = customer("C1")
     cu2 = customer("C2")
