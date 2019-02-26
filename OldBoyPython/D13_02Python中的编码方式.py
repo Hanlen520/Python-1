@@ -34,7 +34,6 @@ s222 = b111.decode('gbk')
 print('s222: ', s222)
 
 
-
 # Unicode
 string1 = "HEllo小明"
 print(type(string1))
