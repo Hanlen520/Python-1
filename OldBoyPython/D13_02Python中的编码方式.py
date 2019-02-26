@@ -40,7 +40,7 @@ string1 = "HEllo小明"
 print(type(string1))
 print(len(string1))
 
-string2 = U"HEllo小红"
+string2 = u"HEllo小红"
 print(type(string2))
 print(len(string2))
 
