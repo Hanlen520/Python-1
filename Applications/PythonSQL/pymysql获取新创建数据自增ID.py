@@ -13,19 +13,22 @@ import pymysql
 # 连接数据库
 conn = pymysql.connect(host='172.18.99.180', port=3306, user='root',
                        password='jiangheng', db='STUDY_DATABASE')
-# 创建游标
+
+# 创建游标(相当于是打开了数据库的门)
 cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
 
-# 执行存储过程
-cursor.execute('pr1')
-# cursor.execute('pr2', args=(1, 2, 3, 4))
+# 执行数据插入(门打开了，再进行各种数据库的操作)
+cursor.execute("INSERT INTO sex(sex_name) values('未知')")
 
-# 获取执行完存储的参数
-cursor.execute()
-result = cursor.fetchall()
-
+# 将上面执行的数据提交到数据库里(不然无法保存新建或者修改的数据)
 conn.commit()
+
+# 关闭游标
 cursor.close()
+
+# 关闭数据库连接
 conn.close()
 
-print(result)
+# 获取最新自增ID
+new_id = cursor.lastrowid
+print(new_id)
