@@ -11,8 +11,8 @@
 import pymysql
 
 # 连接数据库
-conn = pymysql.connect(host='172.18.99.180', port=3306, user='root',
-                       password='jiangheng', db='STUDY_DATABASE')
+conn = pymysql.connect(host='127.0.0.1', port=3306, user='root',
+                       password='159357', db='STUDY_DATABASE')
 
 # 创建游标(相当于是打开了数据库的门)
 cursor = conn.cursor()
