@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7_lqpd9(&063it4o)y%tv6(+5l)ibj9hj-94v4fptoq7yr-4ab'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 小提示：DEBUG=True 的时候，Django 还可以自动找到 各 app 下 static 文件夹中的静态文件（js，css，图片等资源）
 DEBUG = True
 
 ALLOWED_HOSTS = []
