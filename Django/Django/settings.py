@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     # 新定义的app: Studyblog加到settings.py中的INSTALL_APPS中
     # 新建的app如果不加到INSTALL_APPS中的话，django就不能自动找到app中的模板文件（app-name/templates/下的文件）和静态文件（app-name/static/中的文件）
-    'Studyblog'
+    'studyblog'
 ]
 
 MIDDLEWARE = [
