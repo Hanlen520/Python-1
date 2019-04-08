@@ -25,6 +25,7 @@ urlpatterns = [
     # 修炼模板
     path('', studyblog_view.index, name='index'),
     path('home/', studyblog_view.home, name='home'),
+    path('sub/', studyblog_view.sub, name='sub'),
 
 
     # 这里的 name='sub' 是用来干什么的呢？

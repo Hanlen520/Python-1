@@ -28,9 +28,14 @@ def home(request):
     # info_dict = {'host': u'127.0.0.1', 'port': u'8080'}
     # return render(request, 'studyblog/home.html', {"info_dic": info_dict})
 
-    # 模板进行 条件判断和 for 循环的详细操作
-    List = map(str, range(100))     # 一个长度为100的list
-    return render(request, 'studyblog/home.html', {'List': List})
+    # 4.模板进行 条件判断和 for 循环的详细操作
+    # List = map(str, range(100))     # 一个长度为100的list
+    # return render(request, 'studyblog/home.html', {'List': List})
+
+    # 5.模板上得到视图对应的网址-----sub
+
+    # 7.获取当前用户
+    return render(request, 'studyblog/home.html')
 
 
 # 计算器部分

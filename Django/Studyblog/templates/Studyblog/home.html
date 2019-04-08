@@ -6,20 +6,20 @@
 </head>
 <body>
 <!--    <a href="/sub/5/2">计算 5-2</a>-->
-    <h3>我真的好郁闷...</h3>
+    <h3 style="text-align: center; color: blueviolet">我真的好郁闷...</h3>
 
 	{#一般的变量之类的用 "{}（变量）功能类的，比如循环，条件判断是用" {"%%}"（标签）#}
 
-    <!--渲染一个字符串到页面上-->
+    <!--1. 渲染一个字符串到页面上-->
 	{#	{{ string }}#}
 
-    <!--将列表渲染到页面上-->
+    <!--2. 将列表渲染到页面上-->
 	{#	教程列表:#}
 	{#    {% for i in TutorialList %}#}
 	{#    {{ i }}#}
 	{#    {% endfor %}#}
 
-	{#	将字典渲染到页面上 #}
+	{#	3. 将字典渲染到页面上 #}
 {#	字典信息：#}
 {#	HOST：{{ info_dict.host }}#}
 {#	PORT：{{ info_dict.port }}#}
@@ -27,12 +27,35 @@
 	{#		{{ key }}: {{ value }}#}
 	{#	{% endfor %}#}
 
-	{# 模板进行 条件判断和 for 循环的详细操作	#}
+	{# 4. 模板进行 条件判断和 for 循环的详细操作	#}
 	{% for item in List %}
 		{{ item }}
 		{% if not forloop.last %}
 			,
 		{% endif %}
 	{% endfor %}
+
+	{# 5.模板上得到视图对应的网址 #}
+{#	{% url 'sub' 4 5 %}#}
+
+	{# 6.模板中的逻辑操作	#}
+	{% if var >= 90 %}
+		90
+	{% elif var >= 80 %}
+		80
+	{% elif var >= 70 %}
+		70
+	{% else %}
+		go on
+	{% endif %}
+
+	{# 7.模板中获取当前网址、当前用户#}
+	{% if request.user.is_authenticated %}
+		{{ request.user.username }}，你好
+		{{ request.GET.urlencode }}
+	{% else %}
+		请登录
+	{% endif %}
+
 </body>
 </html>
