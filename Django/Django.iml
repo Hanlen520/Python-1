@@ -3,11 +3,7 @@
   <component name="FacetManager">
     <facet type="django" name="Django">
       <configuration>
-<<<<<<< HEAD
         <option name="rootFolder" value="$MODULE_DIR$/Studyblog" />
-=======
-        <option name="rootFolder" value="$MODULE_DIR$/Django" />
->>>>>>> f41f14aeef6b0ae6e06bf7e72fc7f81db2110332
         <option name="settingsModule" value="settings.py" />
         <option name="manageScript" value="manage.py" />
         <option name="environment" value="&lt;map/&gt;" />
@@ -26,11 +22,7 @@
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-<<<<<<< HEAD
-        <option value="$MODULE_DIR$/Studyblog/templates" />
-=======
-        <option value="$MODULE_DIR$/studyblog/templates/Studyblog" />
->>>>>>> f41f14aeef6b0ae6e06bf7e72fc7f81db2110332
+        <option value="$MODULE_DIR$/Studyblog/templates/Studyblog" />
       </list>
     </option>
   </component>

@@ -1,5 +1,7 @@
 from django.db import models
 
+
+# models.py文件是与数据库相关的文件
 # Create your models here.
 # 新建Person类，继承自models.Model
 # 一个类对应数据库中的一张表
@@ -10,12 +12,14 @@ class Person(models.Model):
     def __str__(self):
         return self.name
 
+
 class Blog(models.Model):
     name = models.CharField(max_length=100)
     tagline = models.TextField()
 
     def __str__(self):
         return self.name
+
 
 class Author(models.Model):
     name = models.CharField(max_length=50)
@@ -25,6 +29,7 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Entry(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
@@ -43,11 +48,12 @@ class Entry(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=50)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    content = models.TextField()
-    score = models.IntegerField()
-    tags = models.ManyToManyField('Tag')
+    title = models.CharField(u'标题', max_length=256)
+    content = models.TextField(u'内容')
+
+    # score = models.IntegerField()
+    pub_date = models.DateField(u'发表时间', auto_now_add=True, editable=True)
+    update_time = models.DateTimeField(u'更新时间', editable=True, null=True)
 
     def __str__(self):
         return self.title
