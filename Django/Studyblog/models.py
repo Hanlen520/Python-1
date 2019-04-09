@@ -6,11 +6,15 @@ from django.db import models
 # 新建Person类，继承自models.Model
 # 一个类对应数据库中的一张表
 class Person(models.Model):
-    name = models.CharField(max_length=30)
-    age = models.IntegerField()
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    # age = models.IntegerField()
 
-    def __str__(self):
-        return self.name
+    def my_property(self):
+        return self.first_name + '' + self.last_name
+    my_property.short_description = "Full name of the person"
+
+    full_name = property(my_property)
 
 
 class Blog(models.Model):
