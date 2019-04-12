@@ -18,14 +18,18 @@ Including another URLconf
 # Django的网站是写在urls.py文件中，用正则表达式对应views.py中的一个函数(或generic类)
 from django.contrib import admin
 from django.urls import path
-from studyblog import views as studyblog_view
-
+# from studyblog import views as studyblog_view
+from mysite import views as mysite_view
 urlpatterns = [
+    path('', mysite_view.index),
+    path('admin/', admin.site.urls)
 
+
+    # ------------------studyblog----------------------------------
     # 修炼模板
-    path('', studyblog_view.index, name='index'),
-    path('home/', studyblog_view.home, name='home'),
-    path('sub/', studyblog_view.sub, name='sub'),
+    # path('', studyblog_view.index, name='index'),
+    # path('home/', studyblog_view.home, name='home'),
+    # path('sub/', studyblog_view.sub, name='sub'),
 
 
     # 这里的 name='sub' 是用来干什么的呢？
@@ -34,8 +38,14 @@ urlpatterns = [
     # 计算器功能部分
     # 用正则表达式改造网站，使其更通用，但是下面这块暂时没有调通...网址的正则有问题
     # path(r'^sub/(\d+)/(\d+)/$', studyblog_view.sub, name='sub'),
-    path('sub/<int:a>/<int:b>/', studyblog_view.sub, name='sub'),
-    path('add/', studyblog_view.cal, name='add'),
-    # path('', studyblog_view.index),
-    path('admin/', admin.site.urls),
+    # path('sub/<int:a>/<int:b>/', studyblog_view.sub, name='sub'),
+    # path('add/', studyblog_view.cal, name='add'),
+    # # path('', studyblog_view.index),
+    # path('admin/', admin.site.urls),
+
+    # 用户注册
+    # path('account/', ),
+    # ------------------studyblog----------------------------------
+
+
 ]

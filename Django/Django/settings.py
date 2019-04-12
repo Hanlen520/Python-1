@@ -41,8 +41,18 @@ INSTALLED_APPS = [
 
     # 新定义的app: Studyblog加到settings.py中的INSTALL_APPS中
     # 新建的app如果不加到INSTALL_APPS中的话，django就不能自动找到app中的模板文件（app-name/templates/下的文件）和静态文件（app-name/static/中的文件）
-    'studyblog'
+    # Django学习 app
+    # 'studyblog',
+
+    # user app
+    'users',
+
+    # mysite app
+    'mysite',
+
 ]
+# 把django的user模型换成users包里面的用户模型
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +69,8 @@ ROOT_URLCONF = 'Django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 添加一个公用的放模板的文件夹
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,8 +93,28 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    # 'db1': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'dbname1',
+    #     'USER': 'your_db_user_name',
+    #     'PASSWORD': 'your_password',
+    #     'HOST': 'localhost1'
+    # },
+    # 'db2': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'dbname2',
+    #     'USER': 'your_db_user_name',
+    #     'PASSWORD': 'your_password',
+    #     'HOST': 'localhost2'
+    # }
 }
+# use multi_database in django
+# DATABASES_ROUTERS = ['Django.database_router.DatabaseAppsRouter']
+# DATABASES_APPS_MAPPing = {
+#     'studyblog1': 'db1',
+#     'studyblog2': 'db2'
+# }
 
 
 # Password validation
@@ -141,18 +172,18 @@ STATICFILES_FINDERS = (
 )
 
 # 打印在数据库中执行的语句
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.db.backends': {
-            'handlers': ['console'],
-            'level': 'DEBUG' if DEBUG else 'INFO',
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG' if DEBUG else 'INFO',
+#         },
+#     },
+# }

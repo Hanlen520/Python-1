@@ -1,0 +1,1 @@
+Ubuntu下安装配置nginx: http://www.cnblogs.com/zhaoyingjie/p/6840616.html;
