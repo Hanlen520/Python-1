@@ -12,10 +12,43 @@
 	<title>My First Page</title>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<ul class="navbar-header">
-			<a href="#" class="navbar-body">My First Page</a>
-		</ul>
+	<nav class="navbar navbar-inverse" role="navigation">
+{#		<ul class="navbar-header">#}
+{#			<a href="#" class="navbar-brand">My First Page</a>#}
+{#		</ul>#}
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">C919</a>
+            </div>
+
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#">待办事项</a></li>
+
+                    {% if request.user.is_authenticated %}
+                    <li><a href="#">当前用户: {{ request.user.name }}</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            个人中心：<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">定制工具</a></li>
+                            <li><a href="#">?</a></li>
+                            <li><a href="#">?</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">修改信息</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">登出</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">注册</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
 	</nav>
 
 	<div class="container container-center jumbotron">
