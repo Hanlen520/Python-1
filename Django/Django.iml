@@ -4,13 +4,16 @@
     <facet type="django" name="Django">
       <configuration>
         <option name="rootFolder" value="$MODULE_DIR$" />
-        <option name="settingsModule" value="settings.py" />
+        <option name="settingsModule" value="Django" />
         <option name="manageScript" value="manage.py" />
         <option name="environment" value="&lt;map/&gt;" />
-        <option name="doNotUseTestRunner" value="false" />
+        <option name="doNotUseTestRunner" value="true" />
         <option name="trackFilePattern" value="migrations" />
       </configuration>
     </facet>
+  </component>
+  <component name="Flask">
+    <option name="enabled" value="false" />
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
