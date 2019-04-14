@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} 个人信息修改 {% endblock %}
+
+{% block content %}
+	<h2>欢迎更新您的个人信息!</h2>
+	<div id="app">
+		<table class="table table-hover form-group">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>项目</th>
+					<th>值</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0</td>
+					<td>账户（不可修改）</td>
+					<td><span v-text="email" class="form-control"></span></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>姓名</td>
+					<td><span v-model="name" class="form-control"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

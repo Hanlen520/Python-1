@@ -17,11 +17,13 @@ Including another URLconf
 
 # Django的网站是写在urls.py文件中，用正则表达式对应views.py中的一个函数(或generic类)
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 # from studyblog import views as studyblog_view
 from mysite import views as mysite_view
 urlpatterns = [
     path('', mysite_view.index),
+    path('accounts/', include('users.urls')),
+    path('accounts/profile/', mysite_view.accounts_profile),
     path('admin/', admin.site.urls)
 
 
