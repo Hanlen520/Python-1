@@ -14,11 +14,11 @@ class UserCreationForm(forms.ModelForm):
         'password_mismatch': _('The two password fields didn\'t match.'),
     }
 
-    email = UsersEmailField(label=_('Email Address'), max_length=255)
-    password1 = PasswordField(label=_('Password'))
+    email = UsersEmailField(label=_('邮箱'), max_length=255)
+    password1 = PasswordField(label=_('密码'))
     password2 = PasswordField(
-        label=_('Password Confirmation'),
-        help_text=_('Enter the same password as above, for verification.'))
+        label=_('重复密码'),
+        help_text=_('请再次重复密码并确保他们一致'))
 
     class Meta:
         model = get_user_model()
