@@ -1,0 +1,9 @@
+test_add (PythonTest.test_hello.TestHello) ... ok
+test_say_hello (PythonTest.test_hello.TestHello) ... ok
+test_one_equation (PythonTest.python_unittest.TestFkMath) ... ok
+test_two_equation (PythonTest.python_unittest.TestFkMath) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
