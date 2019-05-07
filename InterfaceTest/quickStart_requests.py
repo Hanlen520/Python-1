@@ -104,8 +104,7 @@ def custom_request_header():
 
 # ==更加复杂的 POST 请求
 def post_request():
-
-    # 传入字典
+    # 传入字典：数据字典会在发送请求时会自动编码为表单形式
     payload1 = {
         'key1': 'value1',
         'key2': 'value2'
@@ -114,7 +113,7 @@ def post_request():
     r1_text = r1.text
     print('r1_text: ', r1_text)
 
-    # 传入元组
+    # 传入元组：应用于在表单中多个元素使用同一 key 的时候
     payload2 = (
         ('key1', 'values1'),
         ('key2', 'values2')
@@ -123,4 +122,35 @@ def post_request():
     r2_text = r2.text
     print('r2_text: ', r2_text)
 
-post_request()
+    # 如果你传递一个 string 而不是一个 dict， 那么数据会被直接发布
+    url = 'https://api.github.com/some/endpoint'
+    payload3 = {
+        'some': 'data'
+    }
+    r3 = requests.post(url, data=payload3)
+    r3_text = r3.text
+    print('r3_text: ', r3_text)
+    r4 = requests.post(url, data=json.dumps(payload3))
+    r4_text = r4.text
+    print('r4_text: ', r4_text)
+
+# post_request()
+
+
+# ==POST 一个多部分编码（Multipart-Encoded）的文件
+def post_multipart_file():
+    url = 'http://httpbin.org/post'
+    files = {
+        # 显式滴设置文件名，文件类型和请求头
+        'file': ('report.xls', open('report.xls', 'rb'), 'application/vnd.ms-excel', {'Expires': '0'})
+    }
+    r = requests.post(url, files=files)
+    print(r.text)
+
+    files2 = {'file': ('report.csv', 'some,data,to,send\nanother,row,to,send\n')}
+    r2 = requests.post(url, files=files2)
+    print(r2.text)
+
+post_multipart_file()
+
+
