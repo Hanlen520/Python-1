@@ -1,0 +1,46 @@
+<!-- 未进行优化的页面 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}} - MicroBlog</title>
+    {% else %}
+    <title>Welcome to MicroBlog</title>
+    {% endif %}
+</head>
+<body>
+<div>
+    MICROBLOG:
+    <!--表达式current_user.is_anonymous仅当用户未登录时的值是True-->
+    <a href="{{ url_for('index') }}">Home</a>
+
+    <!--查看该应用中有那些用户在使用-->
+    <a href="{{ url_for('explore') }}">Explore</a>
+
+    <!--表达式current_user.is_authenticated默认值FALSE-->
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+    <a href="{{ url_for('login') }}">Login</a>
+    <hr>
+    {% endif %}
+</div>
+<hr>
+<!--get_flashed_messages()是Flask中的一个函数，它返回用flash()注册过的消息列表-->
+<!--旦通过get_flashed_messages函数请求了一次，它们就会从消息列表中移除-->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<!--这个不能删除，这是引用模块的位置-->
+{% block content %}
+{% endblock %}
+</body>
+</html>
