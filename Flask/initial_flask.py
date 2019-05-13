@@ -73,7 +73,8 @@ class NameForm(FlaskForm):
 
 
 # 七、配置数据库
-basedir = os.path.abspath(os.path.dirname(__file__))
+basedir = os.path.abspath(os.path.dirname(__file__) + '/')
+print(basedir)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir + 'flask_data.sqlite')
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
@@ -99,7 +100,6 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
-
 
 
 # 3. 启动服务器
