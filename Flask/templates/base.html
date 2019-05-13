@@ -4,30 +4,12 @@
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename="favicon.ico") }}" >
+<link rel="shortcut icon" href="{{ url_for('static', filename="favicon.ico") }}" type="image/x-icon">
 <link rel="icon" href="{{ url_for('static', filename="favicon.ico") }}" >
 {% endblock %}
 
 <header>
 {% block navbar %}
-{#<div class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Flasky</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav nav">
-                <li><a href="/">Home</a></li>
-            </ul>
-        </div>
-    </div>
-</div>#}
 <nav class="navbar navbar-expand-sm navbar-default bg-light" role="navigation" >
 	<a href="#" class="navbar-brand">微猿圈</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
