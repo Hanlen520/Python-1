@@ -1,0 +1,89 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Flasky {% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename="favicon.ico") }}" >
+<link rel="icon" href="{{ url_for('static', filename="favicon.ico") }}" >
+{% endblock %}
+
+<header>
+{% block navbar %}
+{#<div class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Flasky</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</div>#}
+<nav class="navbar navbar-expand-sm navbar-default bg-light" role="navigation" >
+	<a href="#" class="navbar-brand">微猿圈</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div  class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="nav navbar-nav">
+			<li class="nav-item">
+				<a href="#" class="nav-link">推荐</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">关注</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">猿圈</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+{% endblock %}
+</header>
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+
+{# 引入 moment.js 库#}
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+{% endblock %}
+
+
+
+
+{#==========================================#}
+{#
+<html lang="en">
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock %} - MyApplication</title>
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>#}
