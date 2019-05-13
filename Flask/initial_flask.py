@@ -21,6 +21,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 import config
 from flask_migrate import Migrate, MigrateCommand
+from flask_mail import Mail, Message
 
 from datetime import datetime
 
@@ -123,6 +124,25 @@ manager.add_command("shell", Shell(make_context=make_shell_context()))
 # 5.11、数据库迁移
 migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
+
+
+# 六、配置 Flask-Mail 使用 163 邮箱
+app.config['MAIL_SERVER'] = 'smtp.163.com'
+app.config['MAIL_PORT'] = 25
+app.config['MAIL_USE_TLS'] = True
+# app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_USERNAME'] = 'crisimple@163.com'
+# app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_PASSWORD'] = '132wj7916h3709'
+mail = Mail(app)
+# 电子邮件支持
+app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[FLASKY]'
+app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin crisimple@163.com'
+
+
+def send_mail(to, subject, template, **kwargs):
+
+
 
 
 # 3. 启动服务器
