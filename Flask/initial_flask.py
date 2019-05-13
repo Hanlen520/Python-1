@@ -141,7 +141,7 @@ app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin crisimple@163.com'
 
 
 def send_mail(to, subject, template, **kwargs):
-
+    pass
 
 
 
