@@ -3,18 +3,19 @@
 
 {% block page_content %}
     <div class="page_header">
-        <h2>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}</h2>
+        <h2>你好呀, {% if name %}{{ name }}{% else %}陌生人{% endif %}</h2>
 
         {% if not known %}
-            <p>Please to meet you！</p>
+            <p>让我看看是哪位少侠！</p>
         {% else %}
-            <p>Happy to see you again！</p>
+            <p>本猿很高兴能再次见到少侠！</p>
         {% endif %}
     </div>
 
     {{ wtf.quick_form(form) }}
 
     {# 使用 Flask-Moment 进行时间渲染 #}
-    <p>The local date and time is: {{ moment(current_time).format('LLL') }}</p>
-    <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+	<br>
+    <p>现在本地时间为: {{ moment(current_time).format('LLL') }}</p>
+    <p>上次刷新距现在： {{ moment(current_time).fromNow(refresh=True) }}</p>
 {% endblock %}

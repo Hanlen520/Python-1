@@ -22,8 +22,8 @@ import os
 import config
 from flask_migrate import Migrate, MigrateCommand
 from flask_mail import Mail, Message
-
 from datetime import datetime
+from threading import Thread
 
 # 1. Flask 类的构造函数只有一个必须指定的参数，即程序主模块或包的名字。通常 Python 的 __name__变量就是所需的值
 app = Flask(__name__)
@@ -46,6 +46,38 @@ def user(name):
     return render_template('user.html', name=name)
 
 
+# 六、配置 Flask-Mail 使用 163 邮箱
+app.config['MAIL_SERVER'] = 'smtp.163.com'
+app.config['MAIL_PORT'] = 25
+app.config['MAIL_USE_TLS'] = True
+# app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_USERNAME'] = 'crisimple@163.com'
+# app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_PASSWORD'] = '132Wj7916h3709'
+# 电子邮件支持
+app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[FLASKY MAIL Test]'
+app.config['FLASKY_MAIL_SENDER'] = 'crisimple@163.com'
+app.config['FLASKY_ADMIN'] = 'crisimple@qq.com'
+mail = Mail(app)
+
+
+# 异步发送电子邮件
+def send_async_email(app, msg):
+    with app.app_context():
+        mail.send(msg)
+
+
+def send_mail(template, **kwargs):
+    msg = Message(app.config['FLASKY_MAIL_SUBJECT_PREFIX'], sender=app.config['FLASKY_MAIL_SENDER'],
+                  recipients=app.config['FLASKY_ADMIN'])
+    msg.body = render_template(template + '.txt', **kwargs)
+    msg.html = render_template(template + 'html', **kwargs)
+    # mail.send(msg)
+    thr = Thread(target=send_async_email, args=[app, msg])
+    thr.start()
+    return thr
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()
@@ -55,17 +87,17 @@ def index():
             user = User(username=form.name.data)
             db.session.add(user)
             session['known'] = False
+            if app.config['FLASKY_ADMIN']:
+                send_mail(app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
         else:
             session['known'] = True
         old_name = session.get('name')
         if old_name is not None and old_name != form.name.data:
-            flash('你已经改变了你的信息！')
+            flash('恭喜你提交成功了！！！！！')
         session['name'] = form.name.data
         form.name.data = ''
         return redirect(url_for('index'))
-    return render_template(
-        'index.html', form=form, name=session.get('name'), known=session.get('known', False), current_time=datetime.utcnow()
-    )
+    return render_template('index.html', form=form, name=session.get('name'), known=session.get('known', False), current_time=datetime.utcnow())
 
 
 # 自定义错误页面
@@ -80,7 +112,7 @@ def internal_server_error(e):
 
 
 class NameForm(FlaskForm):
-    name = StringField("What is your name?", validators=[DataRequired()])
+    name = StringField("请少侠报上你的大名：", validators=[DataRequired()])
     submit = SubmitField()
 
 
@@ -124,25 +156,6 @@ manager.add_command("shell", Shell(make_context=make_shell_context()))
 # 5.11、数据库迁移
 migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
-
-
-# 六、配置 Flask-Mail 使用 163 邮箱
-app.config['MAIL_SERVER'] = 'smtp.163.com'
-app.config['MAIL_PORT'] = 25
-app.config['MAIL_USE_TLS'] = True
-# app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_USERNAME'] = 'crisimple@163.com'
-# app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-app.config['MAIL_PASSWORD'] = '132wj7916h3709'
-mail = Mail(app)
-# 电子邮件支持
-app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[FLASKY]'
-app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin crisimple@163.com'
-
-
-def send_mail(to, subject, template, **kwargs):
-    pass
-
 
 
 # 3. 启动服务器

@@ -8,3 +8,13 @@
 -- Description: 
 -- Question: 
 -- --------------------------------
+
+-- PythonConsole 测试邮件脚本
+-- from flask_mail import Message
+-- from initial_flask import app, mail
+-- msg = Message('Flask Test Mail', sender='crisimple@163.com', recipients=['crisimple@qq.com'])
+-- msg.body = '邮件内容'
+-- msg.html = '<b>来自大师兄的问候</b>'
+-- with app.app_context():
+--     mail.send(msg)
+-- msg = Message('Flask Test Mail', sender='crisimple@163.com', recipients=['crisimple@qq.com'])
