@@ -3,14 +3,17 @@
 # --------------------------------
 # ProjectName: MySpace
 # Author: crisimple
-# CreateTime: 2019/5/14 18:50
-# FileName: __init__.py
+# CreateTime: 2019/5/15 15:54
+# FileName: views.py
 # Description: 
 # Question: 
 # --------------------------------
 
-from flask import Blueprint
+from flask import render_template
 
-main = Blueprint('main', __name__)
+from . import auth
 
-from . import views, errors
+
+@auth.route('/login')
+def login():
+    return render_template('auth/login.html')

@@ -8,6 +8,7 @@
 -- Description: 
 -- Question: 
 -- --------------------------------
+SELECT * FROM main.users;
 
 -- PythonConsole 测试邮件脚本
 -- from flask_mail import Message

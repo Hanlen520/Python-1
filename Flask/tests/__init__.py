@@ -3,14 +3,8 @@
 # --------------------------------
 # ProjectName: MySpace
 # Author: crisimple
-# CreateTime: 2019/5/14 18:50
+# CreateTime: 2019/5/15 11:01
 # FileName: __init__.py
 # Description: 
 # Question: 
 # --------------------------------
-
-from flask import Blueprint
-
-main = Blueprint('main', __name__)
-
-from . import views, errors

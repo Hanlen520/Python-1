@@ -10,7 +10,6 @@
 # --------------------------------------
 
 from flask import Flask, render_template, session, redirect, url_for, flash
-from flask import request
 from flask_script import Manager, Shell
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
@@ -113,7 +112,7 @@ def internal_server_error(e):
 
 class NameForm(FlaskForm):
     name = StringField("请少侠报上你的大名：", validators=[DataRequired()])
-    submit = SubmitField()
+    submit = SubmitField('提交')
 
 
 # 五、配置数据库
