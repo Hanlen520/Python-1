@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path, include
 # from studyblog import views as studyblog_view
 from mysite import views as mysite_view
+
 urlpatterns = [
     path('', mysite_view.index),
     path('accounts/', include('users.urls')),
